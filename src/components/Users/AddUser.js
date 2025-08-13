@@ -4,7 +4,7 @@ import Button from "../UI/Button";
 import "./AddUser.css";
 
 
-const AddUser = () => {
+const AddUser = (props) => {
   const [username, setUserName] = useState("");
   const [age, setAge] = useState("");
   const userNameChangeHandler = (event) => {
@@ -16,7 +16,7 @@ const AddUser = () => {
   const addUserHandler = (event) => {
     event.preventDefault();
     if (username !== "" && age > 1) {
-      console.log(username, age);
+      props.onSubmitForm(username, age);
       setUserName("");
       setAge("");
     }

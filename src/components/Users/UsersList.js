@@ -8,7 +8,7 @@ function UserList(props) {
           <ul>
             {props.users.map((item) => {
               return(
-                <li>${item.name} (${item.age} years old)</li>
+                <li key={Math.random.toString()}>{item.name} ({item.age} years old)</li>
               )
             })}  
           </ul>
